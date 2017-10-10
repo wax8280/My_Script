@@ -10,10 +10,9 @@ if __name__ == '__main__':
     import sys
 
     if len(sys.argv) < 2:
-        print (u"参数错误")
-        exit(0)
-
-    rootdir = sys.argv[1]
+        rootdir=os.getcwd()
+    else:
+        rootdir = sys.argv[1]
 
     to_rootdir = os.path.join(rootdir, 'target')
     if not os.path.exists(rootdir):

@@ -14,12 +14,16 @@ if __name__ == '__main__':
     from string import Template
     import sys
 
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 2:
         print (u"参数错误")
         exit(0)
 
-    rootdir = sys.argv[2]
-    conv_type=sys.argv[1]
+    elif len(sys.argv) == 2:
+        rootdir = os.getcwd()
+        conv_type = sys.argv[1]
+    else:
+        rootdir = sys.argv[2]
+        conv_type = sys.argv[1]
 
     TO_QINIU = 'qiniu'
     TO_MD = 'md'
